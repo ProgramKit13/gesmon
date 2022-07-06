@@ -3,253 +3,116 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
         <title>Untitled</title>
-    <link rel="stylesheet" href="<?=$base?>/assets/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="<?=$base?>/assets/css/cadastro.css">
-    <link rel="stylesheet" type="text/css" href="<?=$base?>/assets/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="<?=$base?>/assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="<?=$base?>/assets/fonts/fontawesome-all.min.css">
+        <link rel="stylesheet" href="<?=$base?>/assets/css/cadastro.css">
     
 <script type="text/javascript" src="<?=$base?>/assets/js/jquery.js"></script>
 <script type="text/javascript" src="<?=$base?>/assets/js/cadastro/script.js"></script>
-<script type="text/javascript" src="<?=$base?>/assets/js/cadastro/mask/dist/jquery.mask.min.js"></script>
 <script type="text/javascript" src="<?=$base?>/assets/js/cadastro/jquery.validate.js"></script>
 <script type="text/javascript" src="<?=$base?>/assets/js/cadastro/additional-methods.js"></script>
 <script type="text/javascript" src="<?=$base?>/assets/js/cadastro/localization/messages_pt_BR.js"></script>
 
-
-
-
-   </head>
+</head>
 <body>
-    <nav class="navbar navbar-light navbar-expand-md py-3">
-    <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="#"><span class="title-home"><img class="title-img" src="assets/img/icon.svg" />Gescon</span></a>
-        
-        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navcol-4"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-        
-        <div id="navcol-4" class="collapse navbar-collapse flex-grow-0 order-md-first">
-            <ul class="navbar-nav me-auto">
-                <li class="nav-item"><a class="nav-link active" href="<?=$base?>/login">Login</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Fale Conosco</a></li>
-            </ul>
+<div class="container">
+    <div class="card shadow-lg o-hidden border-0 my-5">
+        <div class="card-body p-0">
+            <div class="row">
+                <div class="col-lg-5 d-none d-lg-flex">
+                    <div class="flex-grow-1 bg-register-image" style="background-image: url('<?=$base;?>/assets/img/cadastro/bg.svg');"></div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="p-5">
+                        <div class="text-center">
+                            <h4 class="text-dark mb-4">Crie sua conta</h4>
+                        </div>
+                        <form class="user" method="POST" action="<?=$base ;?>/cadastro">
+                            <div class="row mb-3">
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <input id="nome" class="form-control form-control-user texto" type="text" placeholder="Nome completo" name="nome" />
+                                </div>
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <input id="nomeprop" class="form-control form-control-user texto" type="text" placeholder="Nome da empresa" name="nomeprop" />
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <input id="email" class="form-control form-control-user" type="email" aria-describedby="emailHelp" placeholder="Endereço de email" name="email" />
+                            </div>
+                            <div class="mb-3">
+                                <input id="email2" class="form-control form-control-user" type="email" placeholder="Confirme o email" name="email2" />
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <input id="senha" class="form-control form-control-user" type="password" placeholder="Senha" name="senha" />
+                                </div>
+                                <div class="col-sm-6">
+                                    <input id="senha2" class="form-control form-control-user" type="password" placeholder="Repita a senha" name="senha2" />
+                                </div>
+                            </div>
+                            <button class="btn btn-primary d-block btn-user w-100" type="submit">Cadastrar</button>
+                            <hr />
+                            <a class="btn btn-primary d-block btn-google btn-user w-100 mb-2" role="button">
+                                <i class="fab fa-google"></i>  Cadastrar com uma conta Google</a>
+                                <a class="btn btn-primary d-block btn-facebook btn-user w-100" role="button">
+                                    <i class="fab fa-facebook-f"></i>  Cadastrar com uma conta Fecebook</a>
+                            <hr />
+                        </form>
+                        <div class="text-center"><a class="small" href="<?=$base;?>/login">Já tem uma conta? Faça o login!</a></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</nav>
-<section>
-    <h1 class="text-center text-capitalize">Cadastro</h1>
-    <div class="container">
-        <h3>Dados do gestor ou proprietário</h3>
-
-        <form id="application-form" method="POST" action="<?=$base ?>/cadastro">
-            <div class="form-group mb-3">
-                <div class="row">
-
-                    <div class="col col-sm-2">
-                        <p><strong>Nome</strong><span class="text-danger">*</span></p>
-                        <input class="form-control" type="text" id="nome" name="nome" required name placeholder="Ex. João" />
-                    </div>
-
-                    <div class="col col-sm-3">
-                        <p><strong>Sobrenome</strong><span class="text-danger">*</span></p><input class="form-control" id="sobrenome" name="sobrenome" type="text" required name placeholder="Ex. dos Santos" />
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group mb-3">
-                <div class="row">
-                    <div class="col col-lg-2">
-                        <p><strong>Nascimento</strong><span class="text-danger">*</span></p><input class="form-control" name="nascimento" id="nascimento" type="date" required name  />
-                    </div>
+</div>
 
 
-                    <div class="col col-lg-2">
-                        <p><strong>CPF</strong><span class="text-danger">*</span></p><input class="form-control" name="cpf" id="cpf" type="text" required name placeholder="xxx.xxx.xxx-xx"/>
-                        <script>
-                            $( "#cpf" ).keypress(function() {
-                                $(this).mask('000.000.000-00');
-                            });
-                            </script>
-                    </div>
-
-                    <div class="col col-lg-2">
-                        <p><strong>Telefone </strong><span class="text-danger">*</span></p><input class="form-control" id="telefone" name="telefone" type="text" name placeholder="(xx) xxxx-xxxx">
-                        <script>
-                            $( "#telefone" ).keypress(function() {
-                                $(this).mask('(00) 0000-0000');
-                            });
-                            </script>
-                            </div>
-        
-                            <div class="col col-lg-2">
-                                <p><strong>Celular</strong><span class="text-danger">*</span></p><input class="form-control" id="celular" name="celular" type="text" name placeholder="(xx) xxxxx-xxxx">
-                                <script>
-                                    $( "#celular" ).keypress(function() {
-                                        $(this).mask('(00) 00000-0000');
-                                    });
-                                    </script>
-                                </div>
-                </div>
-            </div>
-
-            <div class="form-group mb-3">
-                <div class="row">
-                    <div class="col col-sm-3">
-                <p><strong>Email </strong><span class="text-danger">*</span></p><input class="form-control" id="email" name="email" type="email" name placeholder="user@domain.com" />
-                    </div>
-
-                <div class="col col-sm-3">
-                <p><strong>Confir. de email</strong><span class="text-danger">*</span></p><input class="form-control" name="email2" id="email2" type="email" name placeholder="user@domain.com" />
-                </div>
-                </div>
-            </div>
-
-            <div class="form-group mb-3">
-                <p><strong>Endereço Residencial</strong><span class="text-danger">*</span></p>
-
-                <div class="row">
-                    <div class="col col-sm-4">
-                        <p>Rua</p>
-                        <input class="form-control" name="rua" id="rua" type="text" required name />
-                    </div>
-
-                    <div class="col col-sm-4">
-                        <p>Bairro</p>
-                        <input class="form-control" id="bairro" name="bairro" type="text" required name  />
-                    </div>
+<script>
+$(document).ready(function(){
+        $('.user').validate({
+            rules:{
+                nome:{
+                        required: true,
+                        minlength: 5,
+                        maxlength: 100
+                },
+                nomeprop:{
+                    required: true,
+                    minlength: 3,
+                    maxlength: 100
+                },
+                email:{
+                        required: true,
+                        email: true
+                },
+                email2:{
+                    required: true,
+                    email: true,
+                    equalTo: '#email'
+                },
+                senha: {
+                    required: true,
+                    minlength: 4,
+                    maxlength: 20
+                },
+                senha2: {
+                    required: true,
+                    minlength: 4,
+                    maxlength: 20,
+                    equalTo: '#senha'
+                }
+            }
+        })
+    })
 
 
-                    <div class="col col-sm-1">
-                        <p>Numero</p>
-                        <input class="form-control" id="numero" name="numero" type="number" onkeypress="num(this)" required name  />
-                        </div>
-                </div>
-            </div>
 
+    
+</script>
 
-            <div class="form-group mb-3">
-                <div class="row">
-
-                    <div class="col col-sm-2">
-                        <p>Cidade</p>
-                        <input class="form-control" id="cidade" name="cidade" type="text" required name />
-                    </div>
-
-                    <div class="col col-sm-2">
-                        <p>Estado</p>
-                        <input class="form-control" type="text" id="estado" name="estado" required name />
-                    </div>
-
-                    <div class="col">
-                        <p>CEP</p>
-                        <input class="form-control"  style="width: 100px" type="text" required name placeholder="xxxxx-xxx" name="cep" id="cep" />
-                        <script>
-                            $( "#cep" ).keypress(function() {
-                                $(this).mask('00000-000');
-                            });
-                            </script>
-                    </div>
-                </div>
-                
-            </div>
-
-            <br/><br/>
-
-            <h3>Dados da propriedade</h3>
-            <div class="form-group mb-3">
-                <div class="row">
-                    <div class="col col-lg-3">
-                        <p><strong>Razão social</strong><span class="text-danger">*</span></p><input class="form-control" id="razaos" name="razaos" type="text" required name  />
-                    </div>
-
-                    <div class="col col-lg-2">
-                        <p><strong>CNPJ</strong><span class="text-danger">*</span></p><input class="form-control" id="cnpj" name="cnpj" type="text" required name placeholder="00.000.000/0000-00" />
-                        <script>
-                            $( "#cnpj" ).keypress(function() {
-                                $(this).mask('00.000.000/0000-00');
-                            });
-                            </script>
-                    </div>
-
-                    <div class="col col-lg-2">
-                        <p><strong>Insc. estadual</strong><span class="text-danger">*</span></p><input class="form-control" type="number" id="insc" onkeypress="num(this)" name="insc" name  />
-                    </div>
-
-                    <div class="col col-lg-2">
-                        <p><strong>Telefone</strong>
-                            <span class="text-danger">*</span></p>
-                            <input class="form-control" id="telcon" name="telecon" type="text" name placeholder="(xx) xxxx-xxxx">
-                            <script>
-                                 $( "#telcon" ).keypress(function() {
-                                        $(this).mask('(00) 0000-0000');
-                                });
-                            </script>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="form-group mb-3">
-                <div class="row">
-                    <div class="col col-sm-3">
-                <p><strong>Email</strong><span class="text-danger">*</span></p><input class="form-control" id="emailcom" name="email" type="emailcom" name placeholder="user@domain.com" />
-                    </div>
-
-                <div class="col col-sm-3">
-                <p><strong>Confir. de email</strong><span class="text-danger">*</span></p><input class="form-control" name="emailcom2" id="emailcom2" type="email" name placeholder="user@domain.com" />
-                </div>
-                </div>
-            </div>
-
-
-            <div class="form-group mb-3">
-                <p><strong>Endereço Comercial</strong><span class="text-danger">*</span></p>
-
-                <div class="row">
-                    <div class="col col-lg-4">
-                <input class="form-control" name="ruacom" id="ruacom" type="text" required name />
-                <p>Rua</p>
-                    </div>
-
-                    <div class="col col-lg-4">
-                <input class="form-control" id="bairrocom" name="bairrocom" type="text" required name  />
-                <p>Bairro</p>
-                    </div>
-
-
-                    <div class="col col-lg-1">
-                        <input class="form-control" id="numerocom" name="numerocom" type="number" onkeypress="num(this)" required name  />
-                        <p>Numero</p>
-                            </div>
-                </div>
-            </div>
-
-
-            <div class="form-group mb-3">
-                <div class="row">
-                    <div class="col col-lg-2">
-                        <input class="form-control" id="cidadecom" name="cidadecom" type="text" required name />
-                        <p>Cidade</p>
-                    </div>
-            
-                    <div class="col col-lg-2"><input class="form-control" type="text" id="estadocom" name="estadocom" required name />
-                        <p>Estado</p>
-                    </div>
-
-                    <div class="col col-lg-2">
-                        <input class="form-control" type="text" required name placeholder="xxxxx-xxx" name="cepcom" style="width: 100px;" id="cepcom" />
-                        <p>CEP</p>
-                        <script>
-                            $( "#cepcom" ).keypress(function() {
-                                $(this).mask('00000-000');
-                            });
-                            </script>
-                    </div>
-                </div>
-
-            </div>
-            <input class="btn btn-success" type="submit" value="Cadastrar" />
-        </form>
-</section>
-
-<script src="assets/bootstrap/js/bootstrap.min.js"></script>
-<script src="assets/js/script.min.js"></script>
+<script src="<?=$base?>/assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="<?=$base?>/assets/js/script.min.js"></script>
 
 </body>
 </html>

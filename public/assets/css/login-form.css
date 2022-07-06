@@ -1,6 +1,9 @@
 * {
   margin: 0;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
+
 
 .mh-100vh {
     min-height:100vh;
@@ -58,4 +61,12 @@
 
   .linkcad:hover {
     color: black;
+  }
+
+  .fluid-option {
+    padding-right: 0;
+  }
+
+  .text-login {
+    color: #0B5884;
   }
